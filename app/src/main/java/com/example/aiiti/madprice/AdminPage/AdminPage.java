@@ -14,10 +14,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import com.example.aiiti.madprice.Adaptor.EdeviceAdaptor;
+import com.example.aiiti.madprice.Edevice.EdeviceDatum;
+import com.example.aiiti.madprice.Edevice.Edevicedata;
 import com.example.aiiti.madprice.R;
-import com.example.aiiti.madprice.Shopkeeper.ShopkeeperDatum;
-import com.example.aiiti.madprice.Shopkeeper.Shopkeeperregdata;
-import com.example.aiiti.madprice.Adaptor.myAdaptor;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,10 +30,10 @@ public class AdminPage extends AppCompatActivity {
     TextView v_id;
     JSONObject obj;
     ListView listView;
-    List<ShopkeeperDatum> list;
-    Shopkeeperregdata shopkeeperregdata = new Shopkeeperregdata();
-    ShopkeeperDatum data[];
-    myAdaptor adaptor;
+    List<EdeviceDatum> list;
+    Edevicedata edevicedata = new Edevicedata();
+    EdeviceDatum data[];
+    EdeviceAdaptor adaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,30 +43,29 @@ public class AdminPage extends AppCompatActivity {
         int id;
         id = intent.getIntExtra("ID", 0);
         v_id = (TextView) findViewById(R.id.idtv);
-        v_id.setText("Welcome "+String.valueOf(id));
+        v_id.setText("Welcome " + String.valueOf(id));
         listView = (ListView) findViewById(R.id.alistv);
         list = new ArrayList<>();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.10.9/api/shopkeeperregs", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.10.9/api/edevices", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
-                    data = new ShopkeeperDatum[10];
-                    //jsonArray.length()
+                    data = new EdeviceDatum[jsonArray.length()];
                     for (int i = 0; i < jsonArray.length(); i++) {
                         obj = jsonArray.getJSONObject(i);
-                        data[i]=new ShopkeeperDatum();
-                        data[i].setSname(obj.getString("sname"));
-                        data[i].setSemail(obj.getString("semail"));
-                        data[i].setSpassword(obj.getString("spassword"));
-                        data[i].setSlocation(obj.getString("slocation"));
-                        data[i].setSshopname(obj.getString("sshopname"));
+                        data[i] = new EdeviceDatum();
+                        data[i].setDname(obj.getString("dname"));
+                        data[i].setDprice(obj.getString("dprice"));
+                        data[i].setDtype(obj.getString("dtype"));
+                        data[i].setDcondition(obj.getString("dcondition"));
+                        data[i].setDstock(obj.getString("dstock"));
                         list.add(data[i]);
                     }
-                    shopkeeperregdata.setData(list);
-                    adaptor = new myAdaptor(getApplicationContext(), R.layout.mylayout,list);
+                    edevicedata.setData(list);
+                    adaptor = new EdeviceAdaptor(getApplicationContext(), R.layout.mylayout, list);
                     listView.setAdapter(adaptor);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -78,7 +77,7 @@ public class AdminPage extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-        //shopkeeperregdata.setData(list);
+        //edevicedata.setData(list);
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
     }

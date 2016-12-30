@@ -17,13 +17,13 @@ import java.util.List;
  * Created by Aiiti on 12/28/2016.
  */
 
-public class myAdaptor extends ArrayAdapter {
+public class ShopkeeperAdaptor extends ArrayAdapter {
 
-    public myAdaptor(Context context, int resource, int textViewResourceId) {
+    public ShopkeeperAdaptor(Context context, int resource, int textViewResourceId) {
         super(context, resource, textViewResourceId);
     }
 
-    public myAdaptor(Context context, int resource, List<ShopkeeperDatum> objects) {
+    public ShopkeeperAdaptor(Context context, int resource, List<ShopkeeperDatum> objects) {
         super(context, resource, objects);
     }
 

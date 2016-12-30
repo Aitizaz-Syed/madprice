@@ -11,7 +11,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.aiiti.madprice.Adaptor.myAdaptor;
+import com.example.aiiti.madprice.Adaptor.ShopkeeperAdaptor;
 import com.example.aiiti.madprice.R;
 import com.example.aiiti.madprice.Shopkeeper.ShopkeeperDatum;
 import com.example.aiiti.madprice.Shopkeeper.Shopkeeperregdata;
@@ -29,7 +29,7 @@ public class SearchPage extends AppCompatActivity {
     List<ShopkeeperDatum> list;
     Shopkeeperregdata shopkeeperregdata = new Shopkeeperregdata();
     ShopkeeperDatum data[];
-    myAdaptor adaptor;
+    ShopkeeperAdaptor adaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,7 @@ public class SearchPage extends AppCompatActivity {
                         list.add(data[i]);
                     }
                     shopkeeperregdata.setData(list);
-                    adaptor = new myAdaptor(getApplicationContext(), R.layout.mylayout,list);
+                    adaptor = new ShopkeeperAdaptor(getApplicationContext(), R.layout.mylayout,list);
                     listView.setAdapter(adaptor);
                 } catch (JSONException e) {
                     e.printStackTrace();
