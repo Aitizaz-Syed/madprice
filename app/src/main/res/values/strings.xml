@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">madprice</string>
+    <array name="condition">
+        <item>New</item>
+        <item>Used</item>
+    </array>
+    <array name="stock">
+        <item>Available</item>
+        <item>Not Available</item>
+    </array>
+</resources>
