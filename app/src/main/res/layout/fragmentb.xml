@@ -1,0 +1,86 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aiiti.madprice.Fragment.FragmentB"
+    android:id="@+id/FragmentbContainer">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="51dp"
+            android:ems="10"
+            android:hint="name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/pricetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/nametxt"
+            android:layout_alignRight="@+id/nametxt"
+            android:layout_below="@+id/nametxt"
+            android:layout_marginTop="25dp"
+            android:ems="10"
+            android:hint="price"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/typetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/pricetxt"
+            android:layout_alignRight="@+id/pricetxt"
+            android:layout_below="@+id/pricetxt"
+            android:layout_marginTop="22dp"
+            android:ems="10"
+            android:hint="type"
+            android:inputType="textPersonName" />
+
+        <Spinner
+            android:id="@+id/condtionspin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/typetxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:entries="@array/condition" />
+
+        <Spinner
+            android:id="@+id/stockspin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/condtionspin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:entries="@array/stock" />
+
+        <Button
+            android:id="@+id/updatebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="66dp"
+            android:text="UPDATE"
+            android:layout_below="@+id/stockspin"
+            android:layout_alignLeft="@+id/typetxt"
+            android:layout_alignStart="@+id/typetxt" />
+
+        <Button
+            android:text="DELETE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/updatebtn"
+            android:layout_alignRight="@+id/typetxt"
+            android:layout_alignEnd="@+id/typetxt"
+            android:id="@+id/deletebtn" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>

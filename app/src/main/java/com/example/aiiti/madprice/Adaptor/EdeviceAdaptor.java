@@ -2,13 +2,13 @@ package com.example.aiiti.madprice.Adaptor;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.aiiti.madprice.Edevice.Edevicedata;
 import com.example.aiiti.madprice.Edevice.EdeviceDatum;
 import com.example.aiiti.madprice.R;
 
@@ -27,6 +27,7 @@ public class EdeviceAdaptor extends ArrayAdapter {
     public EdeviceAdaptor(Context context, int resource, List<EdeviceDatum> objects) {
         super(context, resource, objects);
     }
+
 
     @NonNull
     @Override
@@ -56,5 +57,9 @@ public class EdeviceAdaptor extends ArrayAdapter {
         return v;
 
     }
-
+    @Nullable
+    @Override
+    public Object getItem(int position) {
+        return super.getItem(position);
+    }
 }

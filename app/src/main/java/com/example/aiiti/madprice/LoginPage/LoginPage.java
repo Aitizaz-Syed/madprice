@@ -17,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.aiiti.madprice.AdminPage.AdminPage;
 import com.example.aiiti.madprice.R;
+import com.example.aiiti.madprice.URL;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,7 +45,7 @@ public class LoginPage extends AppCompatActivity {
         v_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.10.9/api/shopkeeperregs", new Response.Listener<String>() {
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, URL.SKURL, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {

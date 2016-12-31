@@ -1,7 +1,8 @@
-package com.example.aiiti.madprice.SearchPage;
+package com.example.aiiti.madprice.AddDevicePage;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,7 +25,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPage extends AppCompatActivity {
+/**
+ * Created by Aiiti on 12/31/2016.
+ */
+
+public class UpdatePage extends AppCompatActivity{
     JSONObject obj;
     ListView listView;
     List<ShopkeeperDatum> list;
@@ -36,6 +41,7 @@ public class SearchPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
+Intent intent=getIntent();
 
         listView = (ListView) findViewById(R.id.listv);
         list = new ArrayList<>();
@@ -48,6 +54,7 @@ public class SearchPage extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
                     data = new ShopkeeperDatum[10];
+                    //jsonArray.length()
                     for (int i = 0; i < jsonArray.length(); i++) {
                         obj = jsonArray.getJSONObject(i);
                         data[i] = new ShopkeeperDatum();
@@ -56,7 +63,6 @@ public class SearchPage extends AppCompatActivity {
                         data[i].setSpassword(obj.getString("spassword"));
                         data[i].setSlocation(obj.getString("slocation"));
                         data[i].setSshopname(obj.getString("sshopname"));
-
                         list.add(data[i]);
                     }
                     shopkeeperregdata.setData(list);

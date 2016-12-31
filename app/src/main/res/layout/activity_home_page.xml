@@ -62,14 +62,5 @@
         android:layout_marginRight="12dp"
         android:layout_marginEnd="12dp" />
 
-    <Button
-        android:text="Add Device"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/adbtn"
-        android:layout_above="@+id/loginbtn"
-        android:layout_alignLeft="@+id/loginbtn"
-        android:layout_alignStart="@+id/loginbtn" />
 
 </RelativeLayout>

@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.aiiti.madprice.R;
+import com.example.aiiti.madprice.URL;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -85,7 +86,7 @@ public class AddDevicePage extends AppCompatActivity {
                 p = v_price.getText().toString();
                 t = v_type.getText().toString();
 
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.10.9/api/edevices", new Response.Listener<String>() {
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, URL.EDURL, new Response.Listener<String>() {
 
                     @Override
                     public void onResponse(String response) {

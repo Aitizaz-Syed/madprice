@@ -21,8 +21,9 @@
         <activity android:name=".SearchPage.SearchPage" />
         <activity android:name=".LoginPage.LoginPage" />
         <activity android:name=".AdminPage.AdminPage" />
-        <activity android:name=".Test.Test" />
-        <activity android:name=".AddDevicePage.AddDevicePage"></activity>
+        <activity android:name=".AddDevicePage.AddDevicePage" />
+        <activity android:name=".MD.MainActivity" />
+        <activity android:name=".MD.SecondActivity"></activity>
     </application>
 
 </manifest>

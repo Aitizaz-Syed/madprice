@@ -4,7 +4,9 @@ package com.example.aiiti.madprice.Edevice;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class EdeviceDatum {
+import java.io.Serializable;
+
+public class EdeviceDatum implements Serializable {
 
     @SerializedName("id")
     @Expose

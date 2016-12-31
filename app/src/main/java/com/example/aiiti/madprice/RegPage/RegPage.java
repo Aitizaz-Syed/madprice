@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.aiiti.madprice.R;
+import com.example.aiiti.madprice.URL;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +22,7 @@ import java.util.Map;
 import static android.accounts.AccountManager.KEY_PASSWORD;
 
 public class RegPage extends AppCompatActivity {
-    public static final String REG_URL = "http://192.168.10.9/api/shopkeeperregs";
+
     EditText s_name, s_email, s_password, s_location, s_shopname;
     Button s_ca;
     String v_name, v_email, v_password, v_location, v_shopname;
@@ -46,7 +47,7 @@ public class RegPage extends AppCompatActivity {
                 v_password = s_password.getText().toString();
                 v_location = s_location.getText().toString();
                 v_shopname = s_shopname.getText().toString();
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, REG_URL,
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, URL.SKURL,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
