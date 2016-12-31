@@ -5,6 +5,6 @@ package com.example.aiiti.madprice;
  */
 
 public class URL {
-    public  static final String SKURL="http://192.168.10.3/api/shopkeeperregs";
-    public static final String EDURL="http://192.168.10.3/api/edevices/";
+    public  static final String SKURL="http://192.168.43.118/api/shopkeeperregs";
+    public static final String EDURL="http://192.168.43.118/api/edevices/";
 }

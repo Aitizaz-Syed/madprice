@@ -29,7 +29,7 @@ import java.util.List;
  * Created by Aiiti on 12/31/2016.
  */
 
-public class UpdatePage extends AppCompatActivity{
+public class UpdatePage extends AppCompatActivity {
     JSONObject obj;
     ListView listView;
     List<ShopkeeperDatum> list;
@@ -41,7 +41,7 @@ public class UpdatePage extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
-Intent intent=getIntent();
+        Intent intent = getIntent();
 
         listView = (ListView) findViewById(R.id.listv);
         list = new ArrayList<>();

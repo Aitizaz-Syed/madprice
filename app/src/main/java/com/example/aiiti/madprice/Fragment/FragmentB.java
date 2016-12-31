@@ -35,7 +35,6 @@ public class FragmentB extends Fragment {
     Spinner v_conditon, v_stock;
     int v_condid, v_stockid, v_id;
     String n, p, t;
-    //    public static final String v_UTAG = "1";
     private EdeviceDatum employee;
 
     public static FragmentB newInstance(EdeviceDatum employee) {
@@ -119,17 +118,14 @@ public class FragmentB extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(getActivity(), response, Toast.LENGTH_LONG).show();
-
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
-
                     }
                 }) {
                     protected Map<String, String> getParams() {
-
                         Map<String, String> params = new HashMap<String, String>();
 
                         params.put("dname", n);
@@ -138,20 +134,13 @@ public class FragmentB extends Fragment {
                         params.put("dcondition", String.valueOf(v_condid));
                         params.put("dstock", String.valueOf(v_stockid));
                         params.put("Dusertag", String.valueOf(v_id));
-
-
                         return params;
                     }
-
-
                 };
-
-
                 RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
                 requestQueue.add(stringRequest);
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
-
             }
         });
 
@@ -169,19 +158,15 @@ public class FragmentB extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
-
                     }
                 });
                 RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
                 requestQueue.add(stringRequest);
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
-
             }
         });
         return view;
     }
-
-
 }
 

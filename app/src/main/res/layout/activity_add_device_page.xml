@@ -70,5 +70,5 @@
         android:layout_below="@+id/stockspin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
-        android:text="Post" />
+        android:text="POST" />
 </RelativeLayout>
